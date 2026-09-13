@@ -18,7 +18,7 @@ if ($count > 0) {
 <?php
 
 if (isset($_POST['btnAdd'])) {
-    $pack_name = $_POST['txt_pack_name'];
+    $pack_name = mysqli_real_escape_string($con, $_POST['txt_pack_name']);
     $pack_name = strtoupper($pack_name);
 
     $dest_name = $_POST['txt_dest_name'];
@@ -29,7 +29,7 @@ if (isset($_POST['btnAdd'])) {
 
     $pack_type = $_POST['txt_pack_type'];
     $pack_price = $_POST['txt_pack_price'];
-    $desc = $_POST['txt_desc'];
+    $desc = mysqli_real_escape_string($con, $_POST['txt_desc']);
     $people = $_POST['txt_people'];
     $start_date = $_POST['start_date'];
     $start_time = $_POST['start_time'];
@@ -151,7 +151,7 @@ if (isset($_POST['btnAdd'])) {
                     <input class="form-control form-control-lg mb-4" type="time" name="start_time">
                 </div>
                 <div class="col-3">
-                    <button type="submit" class="btn btn-success " name="btnAdd" >Create Package</button>
+                    <button type="submit" class="btn btn-success " name="btnAdd">Create Package</button>
                     <a href="admin_show_package.php" class="btn btn-warning">Back</a>
                 </div>
             </div>

@@ -59,7 +59,7 @@ if (isset($_SESSION['isloggedin']) && $_SESSION['isloggedin'] != NULL) {
     </div>
 
     <div id="preloader" class="preloader"><button class="th-btn preloaderCls">Cancel Preloader</button>
-        <div class="preloader-inner"><img src="assets/img/logo3.svg" alt=""></div>
+        <div class="preloader-inner"><img src="./images/logo_main.png" style="width: 100px;" alt=""></div>
         <div id="loader" class="th-preloader">
             <div class="animation-preloader">
                 <div class="txt-loading"><span preloader-text="A" class="characters">A </span><span preloader-text="t"
@@ -116,8 +116,8 @@ if (isset($_SESSION['isloggedin']) && $_SESSION['isloggedin'] != NULL) {
                     <div class="info-box_text">
                         <div class="icon"><img src="assets/img/icon/phone.svg" alt="img"></div>
                         <div class="details">
-                            <p><a href="tel:+01234567890" class="info-box_link">+91 85214 74528    (India)</a></p>
-                            <p><a href="tel:+09876543210" class="info-box_link">+1 (555) 234-5678  (USA)</a></p>
+                            <p><a href="tel:+01234567890" class="info-box_link">+91 85214 74528 (India)</a></p>
+                            <p><a href="tel:+09876543210" class="info-box_link">+1 (555) 234-5678 (USA)</a></p>
                         </div>
                     </div>
                     <div class="info-box_text">
