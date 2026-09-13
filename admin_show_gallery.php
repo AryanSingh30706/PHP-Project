@@ -82,9 +82,10 @@ if ($count > 0) {
                 <?php
                 $i = 1;
                 foreach ($user as $u) {
+                    $image_src = file_exists($u['image']) ? $u['image'] : 'https://placehold.co/400x300/e0e0e0/000000?text=Image+Missing';
                 ?>
                     <div class="pkg-card">
-                        <img class="pkg-card-img" src="<?php echo $u['image'] ?>" alt="Gallery Image" />
+                        <img class="pkg-card-img" src="<?php echo $image_src; ?>" alt="Gallery Image" />
                         <div class="pkg-card-title pkg-title-white">
                             <a href="admin_update_gallery.php?id=<?php echo $u['id']; ?>" class="btn btn-warning"><i class="fa-regular fa-pen-to-square"></i> Edit</a>
                             <a href="admin_delete_gallery.php?id=<?php echo $u['id']; ?>" class="btn btn-danger"><i class="fa-solid fa-trash"></i> Delete</a>
