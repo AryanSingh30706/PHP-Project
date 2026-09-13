@@ -128,7 +128,7 @@ include 'connect.php';
         <hr style="color: white;">
 
 
-        <p style="color: white;">Don't have an Account yet? <a class="link-reg text text-primary" href="#">Register here</a></p>
+        <p style="color: white;">Don't have an Account yet? <a class="link-reg text text-primary" href="register.php">Register here</a></p>
 
 
 
@@ -215,6 +215,7 @@ if (isset($_POST['btnSubmit'])) {
                 $row = mysqli_fetch_assoc($res);
                 $_SESSION['isloggedin'] = true;
                 $_SESSION['username'] = $row['user_name'];
+                $_SESSION['userid']=$row['user_id'];
                 echo "<script>window.location.href = 'home.php'</script>";
                 // header("location:home.php");
 

@@ -1,15 +1,14 @@
 <?php
 include('connect.php');
-$type=$_GET['type'];
 include('admin_header.php');
 
-if(!isset($type)){
-$query = "SELECT * FROM `tbl_destination`";
-
-}else{
-$query = "SELECT * FROM `tbl_destination` WHERE type='$type'";
-
+if (!isset($_GET['type']) || empty($_GET['type'])) {
+    $query = "SELECT * FROM `tbl_destination`";
+} else {
+    $type = $_GET['type'];
+    $query = "SELECT * FROM `tbl_destination` WHERE type='$type'";
 }
+
 $res = mysqli_query($con, $query);
 
 $count = 0;

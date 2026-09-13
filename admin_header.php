@@ -135,7 +135,7 @@ if (!$isadmin) {
                         </li>
 
                         <li class="sidebar-item  ">
-                            <a href="form-layout.html" class='sidebar-link'>
+                            <a href="admin_show_booking.php" class='sidebar-link'>
                                 <i class="bi bi-calendar-check"></i>
                                 <span>Bookings</span>
                             </a>
@@ -161,8 +161,8 @@ if (!$isadmin) {
                                     <img src="./assets/compiled/jpg/1.jpg" alt="Face 1">
                                 </div>
                                 <div class="ms-3 name">
-                                    <h5 class="font-bold">John Duck</h5>
-                                    <h6 class="text-muted mb-0">@johnducky</h6>
+                                    <h5 class="font-bold">Admin</h5>
+                                    <h6 class="text-muted mb-0">admin@atlasgo.com</h6>
                                 </div>
                             </div>
                         </div>

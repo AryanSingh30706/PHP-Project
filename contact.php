@@ -2,8 +2,15 @@
 include('header.php');
 ?>
 
+<div style="
+    background-color: #303954;
+    border: 0px solid transparent;
+    width: 100%;
+    height: 100px;">
+</div>
+
 <!-- Page Title / Inner Hero Banner -->
-<div class="breadcumb-wrapper mt-15" data-bg-src="images/mesut-kaya-eOcyhe5-9sQ-unsplash.jpg" style="padding: 180px 0 100px; background-size: cover; background-position: center; position: relative; border-radius: 20px; margin: 20px; overflow: hidden; border: 1px solid transparent;">
+<div class="breadcumb-wrapper mt-5" data-bg-src="images/mesut-kaya-eOcyhe5-9sQ-unsplash.jpg" style="padding: 180px 0 100px; background-size: cover; background-position: center; position: relative; border-radius: 20px; margin: 20px; overflow: hidden; border: 1px solid transparent;">
     <div class="container">
         <div class="breadcumb-content text-center">
             <h1 class="breadcumb-title text-white fw-bold mb-3"><i class="fa-solid fa-envelope me-2"></i>Contact Us</h1>

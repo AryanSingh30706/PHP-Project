@@ -1,25 +1,48 @@
 <?php
+include('header.php');
 include('connect.php');
-include('admin_header.php');
 
-$filter_type = isset($_GET['type']) ? $_GET['type'] : '';
-
-if ($filter_type == 'Domestic' || $filter_type == 'International') {
-    $query = "SELECT * FROM `tbl_package` WHERE `type` = '$filter_type'";
-} else {
-    $query = "SELECT * FROM `tbl_package`";
-}
-
-$res = mysqli_query($con, $query);
-
-$count = 0;
-$count = mysqli_num_rows($res);
+$tag = $_GET['tag'];
 
 $user = array();
-if ($count > 0) {
-    while ($row = mysqli_fetch_assoc($res)) {
-        $user[] = $row;
+if ($tag == 1) {
+    $query = "SELECT * FROM `tbl_destination` WHERE `type` LIKE 'Domestic'";
+    $res = mysqli_query($con, $query);
+
+    $count = 0;
+    $count = mysqli_num_rows($res);
+
+
+    if ($count > 0) {
+        while ($row = mysqli_fetch_assoc($res)) {
+            $user[] = $row;
+        }
+    } else {
+        $error = "No Domestic Destination Available At This Moment";
     }
+    $page = "Domestic";
+    $sub_heading = "Discover India";
+    $main_heading = "Trails of the Ancient Land";
+    $desc = "Explore majestic forts, tranquil valleys, and cultural landmarks across our native soil with exclusive domestic tour packages.";
+} elseif ($tag == 2) {
+    $query = "SELECT * FROM `tbl_destination` WHERE `type` LIKE 'International'";
+    $res = mysqli_query($con, $query);
+
+    $count = 0;
+    $count = mysqli_num_rows($res);
+
+
+    if ($count > 0) {
+        while ($row = mysqli_fetch_assoc($res)) {
+            $user[] = $row;
+        }
+    } else {
+        $error = "No International Destination Available At This Moment";
+    }
+    $page = "International";
+    $sub_heading = "Global Odyssey";
+    $main_heading = "Visions of the Wide World";
+    $desc = "Step out into the wider world, discover vibrant cultures, and experience iconic international destinations with our handpicked global getaways.";
 }
 ?>
 
@@ -253,6 +276,8 @@ if ($count > 0) {
         margin: 0;
     }
 
+
+
     /* ---------- BACK ---------- */
     .pkgc-back {
         transform: rotateY(180deg);
@@ -397,92 +422,111 @@ if ($count > 0) {
     }
 </style>
 
-<div class="container">
-    <div class="card">
-        <div class="card-body" style="display: flex;justify-content: space-between;align-items: center;">
-            <h2>List of Packages</h2>
-            <a href="admin_add_package.php" class="btn btn-primary"><i class="fa-solid fa-plus fa-sm" style="color: rgb(255, 255, 255);"></i> Add New Package</a>
-        </div>
+<!-- Page Title / Inner Hero Banner -->
+<div class="breadcumb-wrapper mt-5" data-bg-src="images/back.avif" style="padding: 180px 0 100px; background-size: cover; background-position: center; position: relative; border-radius: 20px; margin: 20px; overflow: hidden; border: 1px solid transparent;">
+    <div class="container">
+        <div class="breadcumb-content text-center">
+            <h1 class="breadcumb-title text-white fw-bold mb-3"><i class="fa-solid fa-circle-info me-2"></i>AtlasGo - Packages</h1>
+            <ul class="breadcumb-menu list-inline text-white">
+                <li class="list-inline-item"><a href="home.php" class="text-white">Home</a></li>
+                <li class="list-inline-item me-2">/</li>
+                <li class="list-inline-item"><a href="packages.php" class="text-white">Packages</a></li>
+                <li class="list-inline-item me-2">/</li>
+                <li class="list-inline-item text-white-50"><?php echo $page ?></li>
 
-        <div class="card-body d-flex align-items-center gap-2">
-            <p class="text text-primary mb-0 text-nowrap" style="font-weight: bold;">Type : </p>
-            
-            <select class="form-select lead" aria-label="Default select example" style="width: 300px;" onchange="window.location.href='?type='+this.value">
-                <option value="" <?php echo ($filter_type == '') ? 'selected' : ''; ?>>All Packages</option>
-                <option value="Domestic" <?php echo ($filter_type == 'Domestic') ? 'selected' : ''; ?>>Domestic</option>
-                <option value="International" <?php echo ($filter_type == 'International') ? 'selected' : ''; ?>>International</option>
-            </select>
-        </div>
 
-        <div class="card-body">
-            <div class="pkgc-wrap">
-                <?php if (isset($_GET['msg'])) { ?>
-                    <div class="pkgc-flash"><?php echo htmlspecialchars($_GET['msg']); ?></div>
-                <?php } ?>
-
-                <?php if ($count > 0) { ?>
-                    <div class="pkgc-grid">
-                        <?php
-                        $i = 1;
-                        foreach ($user as $u) {
-                        ?>
-                            <div class="pkgc-flip" tabindex="0">
-                                <div class="pkgc-flip-inner">
-                                    <div class="pkgc-face pkgc-front" style="background-image:url('<?php echo $u['pic']; ?>')">
-                                        <div class="pkgc-id-row">
-                                            <span class="pkgc-pill"><?php echo $i++; ?></span>
-                                            <span class="pkgc-pill pkgc-dest">DID-<?php echo $u['did']; ?></span>
-                                        </div>
-                                        <div>
-                                            <h2 class="pkgc-front-title"><?php echo $u['pname']; ?></h2>
-                                            <p class="pkgc-front-sub"><?php echo $u['type']; ?></p>
-                                        </div>
-                                    </div>
-                                    <div class="pkgc-face pkgc-back">
-                                        <div class="pkgc-back-top">
-                                            <div>
-                                                <h3 class="pkgc-back-title"><?php echo $u['pname']; ?></h3>
-                                                <p class="pkgc-type-tag"><?php echo $u['type']; ?></p>
-                                            </div>
-                                            <span class="pkgc-price">₹<?php echo $u['price']; ?></span>
-                                        </div>
-                                        <p class="pkgc-desc"><?php echo $u['description']; ?></p>
-                                        <div class="pkgc-stub">
-                                            <div class="pkgc-ticket-fields">
-                                                <div>
-                                                    <p class="pkgc-tf-label">People</p>
-                                                    <p class="pkgc-tf-value"><?php echo $u['no_of_people']; ?></p>
-                                                </div>
-                                                <div>
-                                                    <p class="pkgc-tf-label">Date</p>
-                                                    <p class="pkgc-tf-value"><?php echo $u['date']; ?></p>
-                                                </div>
-                                                <div>
-                                                    <p class="pkgc-tf-label">Time</p>
-                                                    <p class="pkgc-tf-value"><?php echo $u['time']; ?></p>
-                                                </div>
-                                            </div>
-                                            <div class="pkgc-actions">
-                                                <a href="admin_update_package.php?id=<?php echo $u['pid']; ?>" class="pkgc-btn-edit"><i class="fa-regular fa-pen-to-square"></i> Edit</a>
-                                                <a href="admin_delete_package.php?id=<?php echo $u['pid']; ?>" class="pkgc-btn-delete"><i class="fa-solid fa-trash"></i> Delete</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        <?php
-                        }
-                        ?>
-                    </div>
-                <?php } else { ?>
-                    <div class="pkgc-empty-state">No packages found for this selection.</div>
-                <?php } ?>
-            </div>
-
+            </ul>
         </div>
     </div>
 </div>
 
+<section class="space position-relative overflow-hidden my-5" id="packages-sec">
+    <div class="container">
+
+        <!-- Section Title Header -->
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="title-area text-center mb-5">
+                    <span class="sub-title"><?php echo $sub_heading ?></span>
+                    <h2 class="sec-title"><?php echo $main_heading ?></h2>
+                    <p class="sec-text"><?php echo $desc ?></p>
+                </div>
+            </div>
+        </div>
+
+        <div>
+
+            <div class="card-body">
+                <div class="pkgc-wrap">
+                    <?php if (isset($_GET['msg'])) { ?>
+                        <div class="pkgc-flash"><?php echo htmlspecialchars($_GET['msg']); ?></div>
+                    <?php } ?>
+
+                    <?php if ($count > 0) { ?>
+                        <div class="pkgc-grid">
+                            <?php
+                            $i = 1;
+                            foreach ($user as $u) {
+                            ?>
+                                <div class="pkgc-flip" tabindex="0">
+                                    <div class="pkgc-flip-inner">
+                                        <div class="pkgc-face pkgc-front" style="background-image:url('<?php echo $u['pic']; ?>')">
+                                            <div class="pkgc-id-row">
+                                                <span class="pkgc-pill"><?php echo $i++; ?></span>
+                                                <!-- <span class="pkgc-pill pkgc-dest">DID-<?php echo $u['did']; ?></span> -->
+                                            </div>
+                                            <div>
+                                                <h2 class="pkgc-front-title"><?php echo $u['pname']; ?></h2>
+                                                <p class="pkgc-front-sub"><?php echo $u['type']; ?></p>
+                                                <!-- <p class="pkgc-hover-hint">hover / tap to manage →</p> -->
+                                            </div>
+                                        </div>
+                                        <div class="pkgc-face pkgc-back">
+                                            <div class="pkgc-back-top">
+                                                <div>
+                                                    <h3 class="pkgc-back-title"><?php echo $u['pname']; ?></h3>
+                                                    <p class="pkgc-type-tag"><?php echo $u['type']; ?></p>
+                                                </div>
+                                                <span class="pkgc-price">₹<?php echo $u['price']; ?></span>
+                                            </div>
+                                            <p class="pkgc-desc"><?php echo $u['description']; ?></p>
+                                            <div class="pkgc-stub">
+                                                <div class="pkgc-ticket-fields">
+                                                    <div>
+                                                        <p class="pkgc-tf-label">People</p>
+                                                        <p class="pkgc-tf-value"><?php echo $u['no_of_people']; ?></p>
+                                                    </div>
+                                                    <div>
+                                                        <p class="pkgc-tf-label">Date</p>
+                                                        <p class="pkgc-tf-value"><?php echo $u['date']; ?></p>
+                                                    </div>
+                                                    <div>
+                                                        <p class="pkgc-tf-label">Time</p>
+                                                        <p class="pkgc-tf-value"><?php echo $u['time']; ?></p>
+                                                    </div>
+                                                </div>
+                                                <div class="pkgc-actions">
+                                                    <a href="admin_update_package.php?id=<?php echo $u['pid']; ?>" class="pkgc-btn-edit"><i class="fa-regular fa-pen-to-square"></i> Edit</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php
+                            }
+                            ?>
+                        </div>
+                    <?php } else { ?>
+                        <div class="pkgc-empty-state">No packages found. Click "Add New Package" to create one.</div>
+                    <?php } ?>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
 <?php
-include('admin_footer.php');
+include('footer.php');
 ?>

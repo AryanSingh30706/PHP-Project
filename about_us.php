@@ -18,6 +18,13 @@ include('header.php');
     }
 </style>
 
+<div style="
+    background-color: #303954;
+    border: 0px solid transparent;
+    width: 100%;
+    height: 100px;">
+</div>
+
 <!-- Page Title / Inner Hero Banner -->
 <div class="breadcumb-wrapper mt-5" data-bg-src="images/jared-rice-649nMi_ymrA-unsplash.jpg" style="padding: 180px 0 100px; background-size: cover; background-position: center; position: relative; border-radius: 20px; margin: 20px; overflow: hidden; border: 1px solid transparent;">
     <div class="container">
@@ -76,8 +83,8 @@ include('header.php');
                     </div>
 
                     <div class="btn-group">
-                        <a href="tour.html" class="th-btn style1 me-3">Explore Our Tours</a>
-                        <a href="contact.html" class="th-btn style2">Contact Us</a>
+                        <a href="destination.php" class="th-btn style1 me-3">Explore Our Tours</a>
+                        <a href="contact.php" class="th-btn style2">Contact Us</a>
                     </div>
                 </div>
             </div>

@@ -1,11 +1,11 @@
 <?php
-// session_start();
-// $islogin = false;
-// $username = "Guest";
-// if (isset($_SESSION['isloggedin']) || $_SESSION['isloggedin'] != NULL) {
-//     $username = $_SESSION['username'];
-//     $islogin = true;
-// }
+session_start();
+$islogin = false;
+$username = "Guest";
+if (isset($_SESSION['isloggedin']) && $_SESSION['isloggedin'] != NULL) {
+    $username = $_SESSION['username'];
+    $islogin = true;
+}
 ?>
 
 <!doctype html>
@@ -75,10 +75,10 @@
         <div class="sidemenu-content"><button class="closeButton sideMenuCls"><i class="far fa-times"></i></button>
             <div class="widget">
                 <div class="th-widget-about">
-                    <div class="about-logo"><a href="home-travel.html"><img src="assets/img/logo2.svg" alt="Tourm"></a>
+                    <div class="about-logo"><a href="home-travel.html"><img style="width: 200px;" src="./images/AtlasGo_Footer.png" alt="AtlasGo"></a>
                     </div>
-                    <p class="about-text">Rapidiously myocardinate cross-platform intellectual capital model.
-                        Appropriately create interactive infrastructures</p>
+                    <p class="about-text">Your trusted travel partner for handpicked tours and memorable vacations. From flight arrangements to guided excursions, we take care of the details so you can enjoy the journey</p>
+                    </p>
                     <div class="th-social"><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a> <a
                             href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a> <a
                             href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a> <a
@@ -89,22 +89,22 @@
                 <h3 class="widget_title">Recent Posts</h3>
                 <div class="recent-post-wrap">
                     <div class="recent-post">
-                        <div class="media-img"><a href="blog-details.html"><img
+                        <div class="media-img"><a href="#"><img
                                     src="assets/img/blog/recent-post-1-1.jpg" alt="Blog Image"></a></div>
                         <div class="media-body">
-                            <div class="recent-post-meta"><a href="blog.html"><i class="far fa-calendar"></i>24 Jun ,
-                                    2024</a></div>
-                            <h4 class="post-title"><a class="text-inherit" href="blog-details.html">Where Vision Meets
+                            <div class="recent-post-meta"><a href="#"><i class="far fa-calendar"></i>24 Jun ,
+                                    2026</a></div>
+                            <h4 class="post-title"><a class="text-inherit" href="#">Where Vision Meets
                                     Concrete Reality</a></h4>
                         </div>
                     </div>
                     <div class="recent-post">
-                        <div class="media-img"><a href="blog-details.html"><img
+                        <div class="media-img"><a href="#"><img
                                     src="assets/img/blog/recent-post-1-2.jpg" alt="Blog Image"></a></div>
                         <div class="media-body">
-                            <div class="recent-post-meta"><a href="blog.html"><i class="far fa-calendar"></i>22 Jun ,
-                                    2024</a></div>
-                            <h4 class="post-title"><a class="text-inherit" href="blog-details.html">Raising the Bar in
+                            <div class="recent-post-meta"><a href="#"><i class="far fa-calendar"></i>22 Jun ,
+                                    2026</a></div>
+                            <h4 class="post-title"><a class="text-inherit" href="#">Raising the Bar in
                                     Construction.</a></h4>
                         </div>
                     </div>
@@ -116,15 +116,15 @@
                     <div class="info-box_text">
                         <div class="icon"><img src="assets/img/icon/phone.svg" alt="img"></div>
                         <div class="details">
-                            <p><a href="tel:+01234567890" class="info-box_link">+01 234 567 890</a></p>
-                            <p><a href="tel:+09876543210" class="info-box_link">+09 876 543 210</a></p>
+                            <p><a href="tel:+01234567890" class="info-box_link">+91 85214 74528    (India)</a></p>
+                            <p><a href="tel:+09876543210" class="info-box_link">+1 (555) 234-5678  (USA)</a></p>
                         </div>
                     </div>
                     <div class="info-box_text">
                         <div class="icon"><img src="assets/img/icon/envelope.svg" alt="img"></div>
                         <div class="details">
-                            <p><a href="mailto:mailinfo00@tourm.com" class="info-box_link">mailinfo00@tourm.com</a></p>
-                            <p><a href="mailto:support24@tourm.com" class="info-box_link">support24@tourm.com</a></p>
+                            <p><a href="mailto:mailinfo00@tourm.com" class="info-box_link">atlasgo@gmail.com</a></p>
+                            <p><a href="mailto:support24@tourm.com" class="info-box_link">supportatlasgo24@gmail.com</a></p>
                         </div>
                     </div>
                     <div class="info-box_text">
@@ -137,22 +137,16 @@
             </div>
         </div>
     </div>
-    <!-- <div class="popup-search-box"><button class="searchClose"><i class="fal fa-times"></i></button>
+    <div class="popup-search-box"><button class="searchClose"><i class="fal fa-times"></i></button>
         <form action="#"><input type="text" placeholder="What are you looking for?"> <button type="submit"><i
                     class="fal fa-search"></i></button></form>
-    </div> -->
+    </div>
     <div class="th-menu-wrapper onepage-nav">
         <div class="th-menu-area text-center"><button class="th-menu-toggle"><i class="fal fa-times"></i></button>
             <div class="mobile-logo"><a href="home-travel.html"><img src="assets/img/logo2.svg" alt="Tourm"></a></div>
             <div class="th-mobile-menu">
                 <ul>
-                    <li class="menu-item-has-children"><a class="active" href="home-travel.html">Home</a>
-                        <ul class="sub-menu">
-                            <li><a href="home-travel.html">Home Travel</a></li>
-                            <li><a href="home-tour.html">Home Tour</a></li>
-                            <li><a href="home-agency.html">Home Agency</a></li>
-                        </ul>
-                    </li>
+                    <li><a class="active" href="home.php">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li class="menu-item-has-children"><a href="#">Destination</a>
                         <ul class="sub-menu">
@@ -212,68 +206,41 @@
                         <div class="col-auto">
                             <nav class="main-menu d-none d-xl-block">
                                 <ul>
-                                    <li class="menu-item-has-children"><a class="active"
-                                            href="home-travel.html">Home</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="home-travel.html">Home Travel</a></li>
-                                            <li><a href="home-tour.html">Home Tour</a></li>
-                                            <li><a href="home-agency.html">Home Agency</a></li>
-                                        </ul>
+                                    <li><a class="active"
+                                            href="home.php">Home</a>
                                     </li>
                                     <li><a href="about_us.php">About Us</a></li>
-                                    <li class="menu-item-has-children"><a href="#">Destination</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="destination.html">Destination</a></li>
-                                            <li><a href="destination-details.html">Destination Details</a></li>
-                                        </ul>
+                                    <li><a href="destination.php">Destinations</a>
+                                        <!-- <ul class="sub-menu">
+                                            <li><a href="destination.html">Domestic(India) Destinations</a></li>
+                                            <li><a href="destination-details.html">International Destinations</a></li>
+                                        </ul> -->
                                     </li>
-                                    <li class="menu-item-has-children"><a href="#">Service</a>
-                                        <ul class="sub-menu">
+                                    <li><a href="packages.php">Packages</a>
+                                        <!-- <ul class="sub-menu">
                                             <li><a href="service.html">Services</a></li>
                                             <li><a href="service-details.html">Service Details</a></li>
-                                        </ul>
+                                        </ul> -->
                                     </li>
                                 </ul>
                             </nav>
                         </div>
                         <div class="col-auto">
-                            <div class="header-logo"><a href="home.php"><img style="height: 80px;width: 210px;" src="./images/AtlasGo.png"
+                            <div class="header-logo"><a href="home.php"><img style="height: 60px;width: 210px;" src="./images/AtlasGo.png"
                                         alt="AtlasGo"></a></div>
                         </div>
                         <div class="col-auto">
                             <nav class="main-menu d-none d-xl-block">
                                 <ul>
-                                    <li class="menu-item-has-children"><a href="#">Activities</a>
+
+                                    <li><a href="booking.php">My Bookings</a></li>
+
+                                    <li><a href="login.php">Login</a></li>
+
+                                    <li class="menu-item-has-children"><a href="#">Profile</a>
                                         <ul class="sub-menu">
-                                            <li><a href="activities.html">activities</a></li>
-                                            <li><a href="activities-details.html">activities Details</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item-has-children"><a href="#">Pages</a>
-                                        <ul class="sub-menu">
-                                            <li class="menu-item-has-children"><a href="#">Shop</a>
-                                                <ul class="sub-menu">
-                                                    <li><a href="shop.html">Shop</a></li>
-                                                    <li><a href="shop-details.html">Shop Details</a></li>
-                                                    <li><a href="cart.html">Cart Page</a></li>
-                                                    <li><a href="checkout.html">Checkout</a></li>
-                                                    <li><a href="wishlist.html">Wishlist</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="gallery.html">Gallery</a></li>
-                                            <li><a href="tour.html">Our Tour</a></li>
-                                            <li><a href="tour-details.html">Tour Details</a></li>
-                                            <li><a href="tour-guide.html">Tour Guider</a></li>
-                                            <li><a href="tour-guider-details.html">Tour Guider Details</a></li>
-                                            <li><a href="faq.html">Faq Page</a></li>
-                                            <li><a href="price.html">Price Package</a></li>
-                                            <li><a href="error.html">Error Page</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item-has-children"><a href="#">Blog</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="blog.html">Blog</a></li>
-                                            <li><a href="blog-details.html">Blog Details</a></li>
+                                            <li><a style="color: red;font-weight: bold;" href="logout.php">Logout</a></li>
+                                            <!-- <li><a href="blog-details.html">Blog Details</a></li> -->
                                         </ul>
                                     </li>
                                     <li><a href="contact.php">Contact us</a></li>
@@ -288,130 +255,3 @@
             </div>
         </div>
     </header>
-
-
-    <div class="th-hero-wrapper hero-1" id="hero">
-        <div class="swiper th-slider hero-slider-1" id="heroSlide1"
-            data-slider-options='{"effect":"fade","menu": ["", "", ""],"heroSlide1": {"swiper-container": {"pagination": {"el": ".swiper-pagination", "clickable": true }}}}'>
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="hero-inner">
-                        <div class="th-hero-bg" data-bg-src="assets1/img/hero/hero_bg_1_1.jpg"></div>
-                        <div class="container">
-                            <div class="hero-style1"><span class="sub-title style1" data-ani="slideinup"
-                                    data-ani-delay="0.2s">Get unforgetable pleasure with us</span>
-                                <h1 class="hero-title" data-ani="slideinup" data-ani-delay="0.4s">Natural Wonder of the
-                                    world</h1>
-                                <div class="btn-group" data-ani="slideinup" data-ani-delay="0.6s"><a href="tour.html"
-                                        class="th-btn th-icon">Explore Tours</a> <a href="service.html"
-                                        class="th-btn style2 th-icon">Our Services</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="hero-inner">
-                        <div class="th-hero-bg" data-bg-src="assets1/img/hero/hero_bg_1_2.jpg"></div>
-                        <div class="container">
-                            <div class="hero-style1"><span class="sub-title style1" data-ani="slideinup"
-                                    data-ani-delay="0.2s">Get unforgetable pleasure with us</span>
-                                <h1 class="hero-title" data-ani="slideinup" data-ani-delay="0.4s">Let’s make your best
-                                    trip with us</h1>
-                                <div class="btn-group" data-ani="slideinup" data-ani-delay="0.6s"><a href="tour.html"
-                                        class="th-btn th-icon">Explore Tours</a> <a href="service.html"
-                                        class="th-btn style2 th-icon">Our Services</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="hero-inner">
-                        <div class="th-hero-bg" data-bg-src="assets1/img/hero/hero_bg_1_3.jpg"></div>
-                        <div class="container">
-                            <div class="hero-style1"><span class="sub-title style1" data-ani="slideinup"
-                                    data-ani-delay="0.2s">Get unforgetable pleasure with us</span>
-                                <h1 class="hero-title" data-ani="slideinup" data-ani-delay="0.4s">Explore beauty of the
-                                    whole world</h1>
-                                <div class="btn-group" data-ani="slideinup" data-ani-delay="0.6s"><a href="tour.html"
-                                        class="th-btn th-icon">Explore Tours</a> <a href="service.html"
-                                        class="th-btn style2 th-icon">Our Services</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="th-swiper-custom"><button data-slider-prev="#heroSlide1" class="slider-arrow slider-prev"><img
-                        src="assets1/img/icon/right-arrow.svg" alt=""></button>
-                <div class="slider-pagination"></div><button data-slider-next="#heroSlide1"
-                    class="slider-arrow slider-next"><img src="assets1/img/icon/left-arrow.svg" alt=""></button>
-            </div>
-        </div>
-    </div>
-    <div class="booking-sec">
-        <div class="container">
-            <form action="https://html.themeholy.com/tourm/demo/mail.php" method="POST"
-                class="booking-form ajax-contact">
-                <div class="input-wrap">
-                    <div class="row align-items-center justify-content-between">
-                        <div class="form-group col-md-6 col-lg-auto">
-                            <div class="icon"><i class="fa-light fa-route"></i></div>
-                            <div class="search-input"><label>Destination</label> <select name="subject" id="subject"
-                                    class="form-select nice-select">
-                                    <option value="Select Destination" selected="selected" disabled="disabled">Select
-                                        Destination</option>
-                                    <option value="Australia">Australia</option>
-                                    <option value="Dubai">Dubai</option>
-                                    <option value="England">England</option>
-                                    <option value="Sweden">Sweden</option>
-                                    <option value="Thailand">Thailand</option>
-                                    <option value="Egypt">Egypt</option>
-                                    <option value="Saudi Arab">Saudi Arab</option>
-                                    <option value="Switzerland">Switzerland</option>
-                                    <option value="Scandinavia">Scandinavia</option>
-                                    <option value="Western Europe">Western Europe</option>
-                                    <option value="Indonesia">Indonesia</option>
-                                    <option class="Italy">Italy</option>
-                                </select></div>
-                        </div>
-                        <div class="form-group col-md-6 col-lg-auto">
-                            <div class="icon"><i class="fa-regular fa-person-hiking"></i></div>
-                            <div class="search-input"><label>Type</label> <select class="nice-select" name="Adventure"
-                                    id="Adventure">
-                                    <option value="Adventure" selected="selected" disabled="disabled">Adventure</option>
-                                    <option value="Beach">Beach</option>
-                                    <option value="Group Tour">Group Tour</option>
-                                    <option value="Couple Tour">Couple Tour</option>
-                                    <option value="Family Tour">Family Tour</option>
-                                </select></div>
-                        </div>
-                        <div class="form-group col-md-6 col-lg-auto">
-                            <div class="icon"><i class="fa-light fa-clock"></i></div>
-                            <div class="search-input"><label>Duration</label> <select class="form-select nice-select"
-                                    name="Duration" id="Duration">
-                                    <option value="Normal" selected="selected" disabled="disabled">Duration</option>
-                                    <option value="1">1 days</option>
-                                    <option value="2">2 days</option>
-                                    <option value="3">3 days</option>
-                                    <option value="4">4 days</option>
-                                    <option value="5">5 days</option>
-                                    <option value="6">6 days</option>
-                                    <option value="7">7 days</option>
-                                </select></div>
-                        </div>
-                        <div class="form-group col-md-6 col-lg-auto">
-                            <div class="icon"><i class="fa-light fa-map-location-dot"></i></div>
-                            <div class="search-input"><label>Tour Category</label> <select name="subject" id="category"
-                                    class="form-select nice-select">
-                                    <option value="Normal" selected="selected" disabled="disabled">Luxury</option>
-                                    <option value="1">Delux</option>
-                                    <option value="2">Economy</option>
-                                </select></div>
-                        </div>
-                        <div class="form-btn col-md-12 col-lg-auto"><button class="th-btn"><img
-                                    src="assets1/img/icon/search.svg" alt="">Search</button></div>
-                    </div>
-                    <p class="form-messages mb-0 mt-3"></p>
-                </div>
-            </form>
-        </div>
-    </div>

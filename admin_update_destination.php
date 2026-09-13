@@ -3,7 +3,7 @@ include 'admin_header.php';
 $id = $_GET['id'];
 include 'connect.php';
 $query = "SELECT * FROM tbl_destination WHERE did = $id";
-$r = mysqli_query($con, $query);
+$r = mysqli_query($con, $query); 
 $row = mysqli_fetch_assoc($r);
 
 if (isset($_POST['btnAdd'])) {

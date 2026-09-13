@@ -8,4 +8,4 @@
     {
         header("location:admin_show_destination.php");
     }
-?>      
+?>   
