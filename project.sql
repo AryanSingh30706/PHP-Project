@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 13, 2026 at 07:11 PM
+-- Generation Time: Sep 14, 2026 at 05:59 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -153,7 +153,21 @@ INSERT INTO `tbl_gallery` (`id`, `image`) VALUES
 (101, 'uploads/varanasi_p1.webp'),
 (102, 'uploads/varanasi_p2.webp'),
 (103, 'uploads/vietnam_p1.jpg'),
-(104, 'uploads/vietnam_p2.jpg');
+(104, 'uploads/vietnam_p2.jpg'),
+(105, 'uploads/gallery1.png'),
+(106, 'uploads/gallery2.png'),
+(107, 'uploads/gallery3.png'),
+(108, 'uploads/gallery4.png'),
+(109, 'uploads/gallery5.png'),
+(110, 'uploads/gallery6.png'),
+(111, 'uploads/gallery7.png'),
+(112, 'uploads/gallery8.png'),
+(113, 'uploads/gallery9.png'),
+(114, 'uploads/gallery10.png'),
+(115, 'uploads/gallery11.png'),
+(116, 'uploads/gallery12.png'),
+(117, 'uploads/gallery13.png'),
+(118, 'uploads/gallery14.png');
 
 -- --------------------------------------------------------
 
@@ -241,7 +255,8 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`user_id`, `user_name`, `password`, `email`, `mobileno`) VALUES
-(23, 'aryan', '123', 'aryansingh30706@gmail.com', '7412589632');
+(23, 'aryan', '123', 'aryansingh30706@gmail.com', '7412589632'),
+(24, 'Dhruv123', '123', 'dhruv@gmail.com', '7412589632');
 
 --
 -- Indexes for dumped tables
@@ -297,7 +312,7 @@ ALTER TABLE `tbl_destination`
 -- AUTO_INCREMENT for table `tbl_gallery`
 --
 ALTER TABLE `tbl_gallery`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=119;
 
 --
 -- AUTO_INCREMENT for table `tbl_package`
@@ -309,7 +324,7 @@ ALTER TABLE `tbl_package`
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
