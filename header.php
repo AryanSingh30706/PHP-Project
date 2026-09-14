@@ -50,6 +50,25 @@ if (isset($_SESSION['isloggedin']) && $_SESSION['isloggedin'] != NULL) {
     <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        @media (min-width: 1200px) {
+            .th-header .main-menu > ul > li > a {
+                padding-left: 14px !important;
+                padding-right: 14px !important;
+            }
+            .th-header .main-menu > ul > li {
+                margin: 0 5px !important;
+            }
+        }
+        /* Remove horizontal line on capsule hover */
+        .th-header .main-menu > ul > li.profile-capsule > a::before {
+            display: none !important;
+            content: none !important;
+        }
+        .th-header .main-menu > ul > li.profile-capsule > a:hover {
+            text-decoration: none !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -202,7 +221,7 @@ if (isset($_SESSION['isloggedin']) && $_SESSION['isloggedin'] != NULL) {
         <div class="sticky-wrapper">
             <div class="menu-area">
                 <div class="container">
-                    <div class="row align-items-center justify-content-between">
+                    <div class="row align-items-center justify-content-between flex-nowrap">
                         <div class="col-auto">
                             <nav class="main-menu d-none d-xl-block">
                                 <ul>
@@ -235,14 +254,22 @@ if (isset($_SESSION['isloggedin']) && $_SESSION['isloggedin'] != NULL) {
 
                                     <li><a href="booking.php">My Bookings</a></li>
 
-                                    <li><a href="login.php">Login</a></li>
+                                    <li><a href="gallery.php">Gallery</a></li>
 
-                                    <li class="menu-item-has-children"><a href="#">Profile</a>
+                                    <?php if ($islogin) { ?>
+                                    <li class="menu-item-has-children profile-capsule">
+                                        <a href="#" style="display: inline-flex; align-items: center; transform: translateY(6px); background: var(--theme-color); border-radius: 30px; padding: 4px 16px 4px 4px !important; margin-top: auto; margin-bottom: auto; color: white; gap: 8px; border: 1px solid var(--theme-color); text-decoration: none;">
+                                            <img src="assets/img/icon/user.svg" alt="User" style="width: 32px; height: 32px; border-radius: 50%; border: 2px solid white; background: #f0f0f0; padding: 4px; object-fit: contain;">
+                                            <span style="font-size: 15px; font-weight: 500; text-transform: none; letter-spacing: 0.5px; line-height: 1;"><?php echo htmlspecialchars($username); ?></span>
+                                        </a>
                                         <ul class="sub-menu">
+                                            <li><a href="login.php">Change User</a></li>
                                             <li><a style="color: red;font-weight: bold;" href="logout.php">Logout</a></li>
-                                            <!-- <li><a href="blog-details.html">Blog Details</a></li> -->
                                         </ul>
                                     </li>
+                                    <?php } else { ?>
+                                    <li><a href="login.php">Login</a></li>
+                                    <?php } ?>
                                     <li><a href="contact.php">Contact us</a></li>
                                 </ul>
                             </nav><button type="button" class="th-menu-toggle d-block d-xl-none"><i
