@@ -18,7 +18,7 @@ if (isset($_POST['btn_update'])) {
 }
 
 // 2. FETCH DATA
-$query = "SELECT * FROM `tbl_booking`";
+$query = "SELECT b.*,p.pname,u.user_name FROM `tbl_booking` as b, tbl_package as p,tbl_user as u WHERE b.pid=p.pid AND b.uid=u.user_id";
 $res = mysqli_query($con, $query);
 
 $count = mysqli_num_rows($res);
@@ -43,8 +43,8 @@ if ($count > 0) {
                     <thead>
                         <tr>
                             <th scope="col">BID</th>
-                            <th scope="col">PACK. ID</th>
-                            <th scope="col">UID</th>
+                            <th scope="col">PACK. NAME</th>
+                            <th scope="col">Username</th>
                             <th scope="col">B_DATE</th>
                             <th scope="col">PAYMENT MODE</th>
                             <th scope="col">STATUS</th>
@@ -58,8 +58,8 @@ if ($count > 0) {
                         ?>
                             <tr class="">
                                 <td scope="row"><?php echo $i++  ?></td>
-                                <td><?php echo $u['pid'] ?></td>
-                                <td><?php echo $u['uid'] ?></td>
+                                <td><?php echo $u['pname'] ?></td>
+                                <td><?php echo $u['user_name'] ?></td>
                                 <td><?php echo $u['bdate'] ?></td>
                                 <td><?php echo $u['payment_mode'] ?></td>
                                 <td>

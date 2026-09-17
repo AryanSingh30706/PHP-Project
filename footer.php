@@ -180,7 +180,10 @@
 </div>
 <script src="assets1/js/vendor/jquery-3.6.0.min.js"></script>
 <script src="assets1/js/swiper-bundle.min.js"></script>
+
+<!-- Keep ONLY one Bootstrap -->
 <script src="assets1/js/bootstrap.min.js"></script>
+
 <script src="assets1/js/jquery.magnific-popup.min.js"></script>
 <script src="assets1/js/jquery.counterup.min.js"></script>
 <script src="assets1/js/jquery-ui.min.js"></script>
@@ -191,9 +194,45 @@
 <script src="assets1/js/matter.min.js"></script>
 <script src="assets1/js/matterjs-custom.js"></script>
 <script src="assets1/js/nice-select.min.js"></script>
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+const closeMenu = document.getElementById("closeMenu");
+
+menuBtn.onclick = function () {
+    mobileMenu.classList.add("active");
+};
+
+closeMenu.onclick = function () {
+    mobileMenu.classList.remove("active");
+};
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const closeMenu = document.getElementById("closeMenu");
+
+    menuBtn.addEventListener("click", function () {
+        mobileMenu.classList.add("active");
+    });
+
+    closeMenu.addEventListener("click", function () {
+        mobileMenu.classList.remove("active");
+    });
+
+});
+</script>
+
+<!-- Keep ONLY one main.js -->
 <script src="assets1/js/main.js"></script>
 <!-- for transition on user side -->
 <script src="assets1/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
 </body>
 <!-- Mirrored from html.themeholy.com/tourm/demo/home-travel.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 23 Aug 2024 08:56:33 GMT -->
 

@@ -431,7 +431,7 @@ if ($count > 0) {
                                     <div class="pkgc-face pkgc-front" style="background-image:url('<?php echo $u['pic']; ?>')">
                                         <div class="pkgc-id-row">
                                             <span class="pkgc-pill"><?php echo $i++; ?></span>
-                                            <span class="pkgc-pill pkgc-dest">DID-<?php echo $u['did']; ?></span>
+                                            <!-- <span class="pkgc-pill pkgc-dest">DID-<?php echo $u['did']; ?></span> -->
                                         </div>
                                         <div>
                                             <h2 class="pkgc-front-title"><?php echo $u['pname']; ?></h2>
