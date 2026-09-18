@@ -152,7 +152,12 @@ function get_val($field, $row)
                 </div>
                 <div class="col-4">
                     <h5 class="card-title">Starting Date</h5>
-                    <input class="form-control form-control-lg mb-4" name="start_date" type="date" value="<?php echo get_val('start_date', $row['date']); ?>">
+                    <input
+                        class="form-control form-control-lg mb-4"
+                        name="start_date"
+                        type="date"
+                        value="<?php echo get_val('start_date', $row['date']); ?>"
+                        min="<?php echo date('Y-m-d'); ?>">
                 </div>
                 <div class="col-4">
                     <h5 class="card-title">Starting Time</h5>
