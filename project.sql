@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 14, 2026 at 05:59 AM
+-- Generation Time: Sep 18, 2026 at 05:29 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -42,7 +42,11 @@ CREATE TABLE `tbl_booking` (
 --
 
 INSERT INTO `tbl_booking` (`bid`, `pid`, `uid`, `bdate`, `payment_mode`, `payment_status`, `no_of_kids`) VALUES
-(8, 50, 23, '2027-01-10', 'Net Banking', 'pending', 1);
+(8, 50, 23, '2027-01-10', 'Net Banking', 'Completed', 1),
+(9, 26, 23, '2027-01-22', 'Net Banking', 'pending', 1),
+(10, 29, 25, '2027-01-29', 'UPI', 'Completed', 2),
+(11, 30, 25, '2026-12-17', 'Net Banking', 'Processing', 0),
+(12, 27, 23, '2027-01-28', 'Net Banking', 'pending', 0);
 
 -- --------------------------------------------------------
 
@@ -82,7 +86,8 @@ INSERT INTO `tbl_destination` (`did`, `dname`, `dpic`, `type`) VALUES
 (53, 'SINGAPORE', 'uploads/singapore.jpg', 'International'),
 (54, 'JAPAN', 'uploads/japan.webp', 'International'),
 (55, 'BALI', 'uploads/bali.png', 'International'),
-(56, 'FRANCE', 'uploads/france.jpg', 'International');
+(56, 'FRANCE', 'uploads/france.jpg', 'International'),
+(57, 'PARI', 'uploads/singapore_p2.jpg', 'International');
 
 -- --------------------------------------------------------
 
@@ -208,7 +213,7 @@ INSERT INTO `tbl_package` (`pid`, `pname`, `did`, `pic`, `type`, `price`, `descr
 (38, 'DARJEELING: QUEEN OF THE HILLS', 50, 'uploads/darjeeling_p1.jpg', 'Domestic', 15999, 'Experience classic hill station charm across 4 Days and 3 Nights. Includes an early morning Tiger Hill sunrise view over Mt. Kanchenjunga, Toy Train heritage rides, visits to Happy Valley Tea Estate, and Peace Pagoda.', 2, '2027-02-07', '10:30'),
 (39, 'DARJEELING: GRAND EASTERN CIRCUIT', 50, 'uploads/darjeeling_p2.jpg', 'Domestic', 27500, 'Combine Darjeeling and Gangtok over 6 Days and 5 Nights. Covers Tiger Hill sunrise, Batasia Loop, Tsomgo Lake, Baba Mandir, tea tasting tours, cable car rides, and private mountain transfers.', 2, '2027-02-14', '23:00'),
 (40, 'ANDAMAN: EMERALD ISLANDS', 51, 'uploads/andaman_p1.jpg', 'Domestic', 29999, 'Escape for 5 Days and 4 Nights to Port Blair and Havelock Island. Includes visits to Radhanagar Beach, Cellular Jail light show, Makruzz luxury ferry transfers, and introductory scuba diving or snorkeling.', 2, '2027-01-25', '02:40'),
-(41, 'ANDAMAN: LUXURY HONEYMOON ESCAPE', 51, 'uploads/andaman_p2.jpg', 'Domestic', 48500, 'A premium 7 Days and 6 Nights journey across Port Blair, Havelock Island, and Neil Island. Includes beachfront resort stays, underwater sea-walks, private romantic candlelight dinners on the beach, and speed boat cruises.', 2, '2026-11-28', '20:41'),
+(41, 'ANDAMAN : LUXURY HONEYMOON ESCAPE', 51, 'uploads/andaman_p2.jpg', 'Domestic', 48500, 'A premium 7 Days and 6 Nights journey across Port Blair, Havelock Island, and Neil Island. Includes beachfront resort stays, underwater sea-walks, private romantic candlelight dinners on the beach, and speed boat cruises.', 2, '2026-11-28', '20:41'),
 (42, 'VARANASI: THE SPIRITUAL CAPITAL', 49, 'uploads/varanasi_p1.webp', 'Domestic', 13500, 'Immerse yourself in India\'s spiritual heart over 3 Days and 2 Nights. Includes an early morning sunrise boat ride on the Ganges, VIP darshan at the Kashi Vishwanath Temple, witnessing the grand evening Ganga Aarti at Dashashwamedh Ghat, and a guided walking tour through the ancient city alleys.', 2, '2027-02-01', '12:00'),
 (43, 'VARANASI: MYSTICISM & HERITAGE CIRCUIT', 49, 'uploads/varanasi_p2.webp', 'Domestic', 18999, 'Discover ancient history and culture across 4 Days and 3 Nights. This package covers a day trip to the Buddhist stupas at Sarnath, a visit to Ramnagar Fort, a Banarasi silk weaving village tour, exclusive evening boat cruises, and premium boutique hotel accommodations near the ghats.', 2, '2027-01-03', '05:00'),
 (44, 'US: NEW YORK & WASHINGTON DC EXPRESS', 35, 'uploads/us_p1.jpg', 'International', 185000, 'Explore the East Coast over 6 Days and 5 Nights. Covers New York City and Washington DC, featuring Statue of Liberty cruises, Times Square tours, Central Park, Empire State Building deck access, and visits to the Capitol Hill and Smithsonian museums.', 4, '2026-12-06', '22:00'),
@@ -256,7 +261,8 @@ CREATE TABLE `tbl_user` (
 
 INSERT INTO `tbl_user` (`user_id`, `user_name`, `password`, `email`, `mobileno`) VALUES
 (23, 'aryan', '123', 'aryansingh30706@gmail.com', '7412589632'),
-(24, 'Dhruv123', '123', 'dhruv@gmail.com', '7412589632');
+(24, 'Dhruv123', '123', 'dhruv@gmail.com', '7412589632'),
+(25, 'bhavya', '123', 'b@gmail.com', '1478512589');
 
 --
 -- Indexes for dumped tables
@@ -300,13 +306,13 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT for table `tbl_booking`
 --
 ALTER TABLE `tbl_booking`
-  MODIFY `bid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `bid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `tbl_destination`
 --
 ALTER TABLE `tbl_destination`
-  MODIFY `did` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `did` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT for table `tbl_gallery`
@@ -324,7 +330,7 @@ ALTER TABLE `tbl_package`
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
