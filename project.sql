@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 18, 2026 at 05:29 AM
+-- Generation Time: Oct 11, 2026 at 09:23 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -34,19 +34,21 @@ CREATE TABLE `tbl_booking` (
   `bdate` date NOT NULL,
   `payment_mode` varchar(50) NOT NULL,
   `payment_status` varchar(80) NOT NULL,
-  `no_of_kids` int(11) NOT NULL
+  `no_of_kids` int(11) NOT NULL,
+  `no_of_adults` int(11) NOT NULL DEFAULT 0,
+  `total_price` decimal(10,2) NOT NULL DEFAULT 0.00
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_booking`
 --
 
-INSERT INTO `tbl_booking` (`bid`, `pid`, `uid`, `bdate`, `payment_mode`, `payment_status`, `no_of_kids`) VALUES
-(8, 50, 23, '2027-01-10', 'Net Banking', 'Completed', 1),
-(9, 26, 23, '2027-01-22', 'Net Banking', 'pending', 1),
-(10, 29, 25, '2027-01-29', 'UPI', 'Completed', 2),
-(11, 30, 25, '2026-12-17', 'Net Banking', 'Processing', 0),
-(12, 27, 23, '2027-01-28', 'Net Banking', 'pending', 0);
+INSERT INTO `tbl_booking` (`bid`, `pid`, `uid`, `bdate`, `payment_mode`, `payment_status`, `no_of_kids`, `no_of_adults`, `total_price`) VALUES
+(24, 29, 23, '2027-01-29', 'UPI', 'Completed', 5, 1, 189000.00),
+(25, 32, 23, '2027-01-10', 'Net Banking', 'Completed', 1, 2, 38247.75),
+(26, 41, 23, '2026-11-28', 'Credit / Debit Card', 'Completed', 2, 2, 121250.00),
+(27, 39, 23, '2027-02-14', 'Pay At Office', 'Completed', 2, 3, 82500.00),
+(28, 44, 23, '2026-12-06', 'Pay At Office', 'Processing', 0, 0, 185000.00);
 
 -- --------------------------------------------------------
 
@@ -66,7 +68,6 @@ CREATE TABLE `tbl_destination` (
 --
 
 INSERT INTO `tbl_destination` (`did`, `dname`, `dpic`, `type`) VALUES
-(34, 'KASHMIR', 'uploads/kashmir.jpg', 'Domestic'),
 (35, 'US', 'uploads/us (2).avif', 'International'),
 (36, 'HAWAII', 'uploads/hawaii.avif', 'International'),
 (37, 'DUBAI', 'uploads/dubai.avif', 'International'),
@@ -86,8 +87,7 @@ INSERT INTO `tbl_destination` (`did`, `dname`, `dpic`, `type`) VALUES
 (53, 'SINGAPORE', 'uploads/singapore.jpg', 'International'),
 (54, 'JAPAN', 'uploads/japan.webp', 'International'),
 (55, 'BALI', 'uploads/bali.png', 'International'),
-(56, 'FRANCE', 'uploads/france.jpg', 'International'),
-(57, 'PARI', 'uploads/singapore_p2.jpg', 'International');
+(56, 'FRANCE', 'uploads/france.jpg', 'International');
 
 -- --------------------------------------------------------
 
@@ -306,13 +306,13 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT for table `tbl_booking`
 --
 ALTER TABLE `tbl_booking`
-  MODIFY `bid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `bid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `tbl_destination`
 --
 ALTER TABLE `tbl_destination`
-  MODIFY `did` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `did` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT for table `tbl_gallery`
@@ -324,7 +324,7 @@ ALTER TABLE `tbl_gallery`
 -- AUTO_INCREMENT for table `tbl_package`
 --
 ALTER TABLE `tbl_package`
-  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT for table `tbl_user`
