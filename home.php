@@ -603,6 +603,22 @@ if ($count2 > 0) {
                 <!-- Change action="packages.php" to whatever your results page is named -->
                 <form method="GET" action="package_search.php" class="row g-0 align-items-center m-0 bg-white shadow-sm rounded-3 text-start">
 
+
+                    <!-- Type (5 cols) -->
+                    <div class="col-lg-5 col-md-6 search-border">
+                        <div class="d-flex align-items-center py-3 px-3 w-100">
+                            <i class="fa-regular fa-person-hiking text-info fs-4 me-3"></i>
+                            <div class="d-flex flex-column align-items-start w-100 text-start">
+                                <label class="text-dark fw-bold mb-1" style="font-size: 20px;">Type</label>
+                                <select name="tour_type" id="tour_type" class="form-select clean-select w-100">
+                                    <option value="">Select Type</option>
+                                    <option value="International">International</option>
+                                    <option value="Domestic">Domestic</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Destination (5 cols) -->
                     <div class="col-lg-5 col-md-6 search-border">
                         <div class="d-flex align-items-center py-3 px-3 w-100">
@@ -616,21 +632,6 @@ if ($count2 > 0) {
                                             <?php echo htmlspecialchars($d['dname']); ?>
                                         </option>
                                     <?php endforeach; ?>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Type (5 cols) -->
-                    <div class="col-lg-5 col-md-6 search-border">
-                        <div class="d-flex align-items-center py-3 px-3 w-100">
-                            <i class="fa-regular fa-person-hiking text-info fs-4 me-3"></i>
-                            <div class="d-flex flex-column align-items-start w-100 text-start">
-                                <label class="text-dark fw-bold mb-1" style="font-size: 20px;">Type</label>
-                                <select name="tour_type" id="tour_type" class="form-select clean-select w-100">
-                                    <option value="">Select Type</option>
-                                    <option value="International">International</option>
-                                    <option value="Domestic">Domestic</option>
                                 </select>
                             </div>
                         </div>
